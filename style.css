@@ -34,3 +34,11 @@ a:hover {
   padding: 15px;
   margin-bottom: 15px;
 }
+
+nav, .menu {
+  margin-bottom: 20px;
+}
+
+.menu a {
+  margin-right: 10px;
+}
