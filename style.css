@@ -42,3 +42,56 @@ nav, .menu {
 .menu a {
   margin-right: 10px;
 }
+.activity {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  border-left: 5px solid #ccc;
+}
+
+.time {
+  font-weight: bold;
+  color: #444;
+}
+
+.content h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.area {
+  color: #666;
+  font-style: italic;
+}
+
+.notes {
+  margin: 5px 0 0 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  margin-top: 5px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+/* STATUS-FÄRGER */
+.status-booked {
+  border-left-color: #16a34a;
+}
+
+.status-planned {
+  border-left-color: #f59e0b;
+}
+
+.status-optional {
+  border-left-color: #9ca3af;
+}
