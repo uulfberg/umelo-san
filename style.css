@@ -101,12 +101,6 @@ nav, .menu {
   color: #333;
 }
 
-.notes {
-  margin: 2px 0 0 0;
-  color: #666;
-  font-size: 0.92rem;
-}
-
 .link-row {
   display: flex;
   flex-wrap: wrap;
@@ -180,4 +174,15 @@ nav, .menu {
     margin-right: 12px;
     margin-bottom: 8px;
   }
+}
+.hint {
+  margin: 3px 0 0 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.notes {
+  margin: 2px 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
 }
