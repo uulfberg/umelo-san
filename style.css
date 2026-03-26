@@ -203,4 +203,9 @@ nav, .menu {
   font-size: 0.9rem;
   color: #666;
 }
+
+.menu a.active {
+  text-decoration: underline;
+  color: #000;
+}
 }
