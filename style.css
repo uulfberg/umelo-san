@@ -63,9 +63,26 @@ nav, .menu {
   font-size: 1rem;
 }
 
-.area {
+.hint {
+  margin: 4px 0 0 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.notes {
+  margin: 2px 0 0 0;
   color: #666;
-  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.area {
+  margin: 2px 0 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.area strong {
+  color: #444;
 }
 
 .notes {
