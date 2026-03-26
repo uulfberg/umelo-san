@@ -95,3 +95,89 @@ nav, .menu {
 .status-optional {
   border-left-color: #9ca3af;
 }
+.hint {
+  margin: 3px 0 0 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.notes {
+  margin: 2px 0 0 0;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.link-row a {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b00020;
+  background: #f3f3f3;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.link-row a:hover {
+  background: #e9e9e9;
+  text-decoration: none;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  margin-top: 6px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+/* FLER STATUSAR */
+.status-tentative {
+  border-left-color: #facc15;
+}
+
+.status-idea {
+  border-left-color: #60a5fa;
+}
+
+.status-backup {
+  border-left-color: #a78bfa;
+}
+
+/* Valfri om du använder tom/fixed för practical senare */
+.status-fixed {
+  border-left-color: #14b8a6;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 14px;
+  }
+
+  .activity {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .time {
+    font-size: 0.95rem;
+  }
+
+  .content h4 {
+    font-size: 1rem;
+  }
+
+  .menu a {
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+}
