@@ -6,35 +6,6 @@
   <title>Praktiskt</title>
   <link rel="stylesheet" href="style.css?v=4">
 </head>
-
-<script>
-document.querySelectorAll('.section').forEach(section => {
-  const header = section.querySelector('.section-header');
-  const content = section.querySelector('.section-content');
-  const toggle = section.querySelector('.toggle');
-
-  if (section.classList.contains('collapsed')) {
-    content.style.display = 'none';
-    toggle.textContent = '+';
-  } else {
-    content.style.display = 'block';
-    toggle.textContent = '–';
-  }
-
-  header.addEventListener('click', () => {
-    section.classList.toggle('collapsed');
-
-    if (section.classList.contains('collapsed')) {
-      content.style.display = 'none';
-      toggle.textContent = '+';
-    } else {
-      content.style.display = 'block';
-      toggle.textContent = '–';
-    }
-  });
-});
-</script>
-  
 <body>
 
 <div class="menu">
@@ -61,7 +32,7 @@ document.querySelectorAll('.section').forEach(section => {
       <li>Pass (giltigt, fotobackup)</li>
       <li>Visit Japan Web (registrera inför inresa)</li>
       <li>Reseförsäkring (utdrag)</li>
-      <li>Bankkort / extra bankkort</li>
+      <li>Bankkort / extra bankkort (beloppsgränser och spärr för Japan)</li>
     </ul>
 
     <h3>Ladda ner innan resan</h3>
@@ -69,7 +40,7 @@ document.querySelectorAll('.section').forEach(section => {
       <li>Google Maps → offlinekartor</li>
       <li>Google Translate → japanska offline</li>
       <li>NAVITIME (valfritt)</li>
-      <li>eSIM / roaming klart</li>
+      <li>eSIM / roaming klart innan avresa</li>
     </ul>
 
     <h3>Om internet inte fungerar</h3>
@@ -83,20 +54,26 @@ document.querySelectorAll('.section').forEach(section => {
     <ul>
       <li>Adapter (Japan: platta stift)</li>
       <li>Powerbank</li>
-      <li>Bekväma skor (2 par)</li>
-      <li>Liten ryggsäck</li>
+      <li>Bekväma promenadskor (2 st)</li>
+      <li>Liten dagryggsäck</li>
       <li>Lite kontanter första dagen</li>
     </ul>
 
     <h3>Betalning</h3>
     <ul>
-      <li>Suica/PASMO används till transport och köp</li>
+      <li>Suica/PASMO används till transport, konbini och mycket annat</li>
       <li>Apple Pay / Google Pay fungerar ofta</li>
-      <li>7-Eleven ATM fungerar bra</li>
+      <li>7-Eleven ATM fungerar bra med utländska kort</li>
+    </ul>
+
+    <h3>Bra att veta</h3>
+    <ul>
+      <li>Kranvattnet i Japan är drickbart</li>
+      <li>Kort fungerar ofta, men småställen kan vara kontantbaserade</li>
+      <li>Ingen dricks i Japan</li>
     </ul>
   </div>
 </div>
-
 
 <div class="section collapsed">
   <div class="section-header">
@@ -105,21 +82,310 @@ document.querySelectorAll('.section').forEach(section => {
   </div>
 
   <div class="section-content">
-
     <ol>
       <li>Immigration → bagage → tull</li>
-      <li>Ta ut kontanter</li>
-      <li>Säkerställ internet</li>
-      <li>Skaffa Suica/PASMO</li>
-      <li>Öppna Google Maps → hotellet</li>
+      <li>Ta ut kontanter (ATM på flygplats eller 7-Eleven)</li>
+      <li>Säkerställ att eSIM / roaming fungerar</li>
+      <li>Skaffa Suica/PASMO (eller digitalt i mobilen)</li>
+      <li>Öppna Google Maps → navigera till hotellet</li>
     </ol>
 
     <p><strong>Tips:</strong></p>
     <ul>
       <li>Allt tar lite längre tid än man tror</li>
-      <li>Följ skyltning steg för steg</li>
+      <li>Skyltningen är bra – följ den steg för steg</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section collapsed">
+  <div class="section-header">
+    <h2>Transport, bagage och praktik</h2>
+    <span class="toggle">+</span>
+  </div>
+
+  <div class="section-content">
+    <h3>Så rör vi oss</h3>
+    <p><strong>I Tokyo</strong></p>
+    <ul>
+      <li>Google Maps</li>
+      <li>Tunnelbana / tåg</li>
+      <li>Ibland taxi om det sparar mycket friktion</li>
     </ul>
 
+    <h3>Så läser man transport i Japan</h3>
+    <ul>
+      <li>Följ linjebokstav + stationsnummer (t.ex. G12)</li>
+      <li>Inte bara stationsnamn</li>
+      <li>Stationer är stora – följ exit-skyltar noga</li>
+    </ul>
+
+    <h3>Från hotellet i Tokyo första dagarna</h3>
+    <p>Vi bor i Kuramae, nära Asakusa.</p>
+    <p><strong>Bra att veta:</strong></p>
+    <ul>
+      <li>Asakusa Station är ofta bäst för klassiska Tokyo-områden</li>
+      <li>Kuramae är bra för andra riktningar</li>
+      <li>Promenad till Asakusa fungerar ofta väldigt bra</li>
+    </ul>
+
+    <h3>Shinkansen</h3>
+    <p>Snabbtåg mellan städerna. Vi reser helst lätt.</p>
+
+    <h3>Bagage</h3>
+    <p>Vi kommer sannolikt att använda bagageservice på vissa sträckor:</p>
+    <ul>
+      <li>Tokyo → Kyoto</li>
+      <li>Kyoto → Tokyo</li>
+    </ul>
+    <p>Det gör resan mycket smidigare.</p>
+
+    <h3>Hakone Pass</h3>
+    <p>För Hakone köper vi:</p>
+    <p><strong>Hakone Free Pass (2 dagar, från Odawara)</strong></p>
+    <p>Det används inom Hakone, inte från Tokyo.</p>
+
+    <h3>Bra att tänka på</h3>
+    <ul>
+      <li>Stationer är stora – det tar tid att byta linje</li>
+      <li>Lägg alltid in lite tidsmarginal</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section collapsed">
+  <div class="section-header">
+    <h2>Japan i praktik</h2>
+    <span class="toggle">+</span>
+  </div>
+
+  <div class="section-content">
+    <h3>Mat</h3>
+    <p><strong>Bra saker att prova:</strong></p>
+    <ul>
+      <li>Sushi</li>
+      <li>Ramen</li>
+      <li>Soba / udon</li>
+      <li>Gyoza</li>
+      <li>Okonomiyaki</li>
+      <li>Streetfood</li>
+      <li>Fluffy pancakes</li>
+      <li>Izakaya-mat</li>
+    </ul>
+
+    <h3>Bra mattips</h3>
+    <ul>
+      <li>Många restauranger ligger på våning 2–6</li>
+      <li>Titta alltid upp när ni letar mat</li>
+      <li>Konbini (7-Eleven, Lawson, FamilyMart) är ofta väldigt bra</li>
+    </ul>
+
+    <h3>I kollektivtrafiken</h3>
+    <ul>
+      <li>Prata tyst</li>
+      <li>Telefon på silent mode</li>
+      <li>Följ skyltar med linjebokstav + stationsnummer</li>
+    </ul>
+
+    <h3>I Japan i allmänhet</h3>
+    <ul>
+      <li>Köer fungerar väl</li>
+      <li>Skor tas ibland av</li>
+      <li>Japan är mycket säkert</li>
+    </ul>
+
+    <h3>Om något känns svårt</h3>
+    <ol>
+      <li>Öppna Google Maps</li>
+      <li>Öppna Google Translate</li>
+      <li>Fråga personal</li>
+    </ol>
+
+    <p><strong>Bra att veta:</strong></p>
+    <ul>
+      <li>Missar vi ett tåg → ta nästa</li>
+      <li>Vi behöver inte stressa – allt löser sig</li>
+      <li>7-Eleven är en trygg fallback (mat, ATM, paus)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section collapsed">
+  <div class="section-header">
+    <h2>Destinationstips del 1</h2>
+    <span class="toggle">+</span>
+  </div>
+
+  <div class="section-content">
+    <h3>Tokyo</h3>
+
+    <p><strong>Asakusa / Kuramae</strong><br>
+    Hint: traditionellt Tokyo nära vårt hotell</p>
+    <ul>
+      <li>Senso-ji</li>
+      <li>Nakamise Street</li>
+      <li>Kappabashi Street</li>
+    </ul>
+
+    <p><strong>Tsukiji</strong><br>
+    Hint: fiskmarknad / frukost / mat</p>
+    <ul>
+      <li>Tsukiji Outer Market</li>
+      <li>Turret Coffee</li>
+      <li>Tsukiji Masamoto</li>
+    </ul>
+
+    <p><strong>Harajuku / Omotesando</strong><br>
+    Hint: ungdomskultur + design</p>
+    <ul>
+      <li>Meiji Shrine</li>
+      <li>Takeshita Street</li>
+      <li>Harajuku</li>
+      <li>Omotesando</li>
+    </ul>
+
+    <p><strong>Shibuya</strong><br>
+    Hint: kvällspuls / neon / ikoniskt Tokyo</p>
+    <ul>
+      <li>Shibuya Crossing</li>
+      <li>Shibuya Sky</li>
+      <li>Restauranger / izakaya</li>
+    </ul>
+
+    <p><strong>Shinjuku / Nakano</strong><br>
+    Hint: kvällsområden / lokalt / nördigt / shopping</p>
+    <ul>
+      <li>Shinjuku nightlife</li>
+      <li>Tokyo Metropolitan Government Building</li>
+      <li>Nakano Broadway</li>
+      <li>Beams</li>
+    </ul>
+
+    <h3>Hakone</h3>
+
+    <p><strong>Hakone-Yumoto</strong><br>
+    Hint: porten till Hakone / lugn start</p>
+    <ul>
+      <li>Hatsuhana Soba Honten</li>
+      <li>Yama no Chaya</li>
+      <li>Onsen och natur</li>
+    </ul>
+
+    <p><strong>Owakudani</strong><br>
+    Hint: vulkanlandskap</p>
+    <ul>
+      <li>Ropeway</li>
+      <li>Svarta ägg</li>
+      <li>Utsikter</li>
+    </ul>
+
+    <p><strong>Gora / Open-Air Museum</strong><br>
+    Hint: konst + natur</p>
+    <ul>
+      <li>Hakone Open-Air Museum</li>
+    </ul>
+
+    <p><strong>Old Tokaido</strong><br>
+    Hint: historisk vandring i skog</p>
+    <ul>
+      <li>Lugnare naturupplevelse</li>
+      <li>Bra avslut på Hakone</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section collapsed">
+  <div class="section-header">
+    <h2>Destinationstips del 2 + kontakter</h2>
+    <span class="toggle">+</span>
+  </div>
+
+  <div class="section-content">
+    <h3>Kyoto</h3>
+
+    <p><strong>Higashiyama</strong><br>
+    Hint: klassiskt gamla Kyoto</p>
+    <ul>
+      <li>Kiyomizu-dera</li>
+      <li>Ninenzaka</li>
+      <li>Sannenzaka</li>
+    </ul>
+
+    <p><strong>Fushimi</strong><br>
+    Hint: torii-portar och bergsvandring</p>
+    <ul>
+      <li>Fushimi Inari</li>
+    </ul>
+
+    <p><strong>Arashiyama</strong><br>
+    Hint: bambuskog + natur</p>
+    <ul>
+      <li>Bamboo Grove</li>
+      <li>Tenryu-ji</li>
+      <li>Floden / bron</li>
+    </ul>
+
+    <p><strong>Gion / Pontocho</strong><br>
+    Hint: kvällspromenad och middag</p>
+    <ul>
+      <li>Gion</li>
+      <li>Yasaka Shrine</li>
+      <li>Shirakawa</li>
+      <li>Pontocho</li>
+    </ul>
+
+    <p><strong>Centrala Kyoto</strong><br>
+    Hint: mat och vardagsliv</p>
+    <ul>
+      <li>Nishiki Market</li>
+      <li>Takashimaya food hall</li>
+      <li>Aritsugu</li>
+    </ul>
+
+    <h3>Osaka</h3>
+
+    <p><strong>Dotonbori / Namba</strong><br>
+    Hint: neon, streetfood, kvällspuls</p>
+    <ul>
+      <li>Dotonbori</li>
+      <li>Ebisu Bridge</li>
+      <li>Streetfood</li>
+    </ul>
+
+    <h3>Hiroshima / Miyajima</h3>
+
+    <p><strong>Hiroshima</strong><br>
+    Hint: historia + okonomiyaki</p>
+    <ul>
+      <li>Peace Memorial Park</li>
+      <li>Atomic Bomb Dome</li>
+      <li>Peace Museum</li>
+      <li>Okonomimura</li>
+    </ul>
+
+    <p><strong>Miyajima</strong><br>
+    Hint: torii-port, hjortar, utsikt</p>
+    <ul>
+      <li>Itsukushima Shrine</li>
+      <li>Mount Misen</li>
+      <li>Promenader på ön</li>
+    </ul>
+
+    <h3>Viktiga nummer</h3>
+    <ul>
+      <li>Polis: 110</li>
+      <li>Ambulans / brandkår: 119</li>
+      <li>Svenska ambassaden i Tokyo: +81 3 5562 5050</li>
+    </ul>
+
+    <h3>Några enkla japanska ord</h3>
+    <ul>
+      <li>Konnichiwa – hej</li>
+      <li>Arigatō gozaimasu – tack</li>
+      <li>Sumimasen – ursäkta / hallå</li>
+      <li>Eigo? – engelska?</li>
+      <li>Google toransureeto ii desu ka? – är det okej om jag använder Google Translate?</li>
+    </ul>
   </div>
 </div>
 
