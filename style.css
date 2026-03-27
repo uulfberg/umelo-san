@@ -169,6 +169,44 @@ nav,
   color: #555;
 }
 
+/* Kollapsbara sektioner för Practical */
+.section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.section-content {
+  padding: 0 16px 16px 16px;
+}
+
+.section.collapsed .section-content {
+  display: none;
+}
+
+.toggle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #666;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 /* Mobil */
 @media (max-width: 640px) {
   body {
@@ -218,40 +256,4 @@ nav,
     margin-right: 14px;
     font-size: 1rem;
   }
-  
-  .section {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  overflow: hidden;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 14px 16px;
-}
-
-.section-header h2 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.section-content {
-  padding: 0 16px 16px 16px;
-}
-
-.section.collapsed .section-content {
-  display: none;
-}
-
-.toggle {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #666;
-  line-height: 1;
-  flex-shrink: 0;
 }
