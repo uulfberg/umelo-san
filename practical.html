@@ -122,3 +122,34 @@ document.querySelectorAll('.section').forEach(section => {
 
   </div>
 </div>
+
+<script>
+document.querySelectorAll('.section').forEach(section => {
+  const header = section.querySelector('.section-header');
+  const content = section.querySelector('.section-content');
+  const toggle = section.querySelector('.toggle');
+
+  if (section.classList.contains('collapsed')) {
+    content.style.display = 'none';
+    toggle.textContent = '+';
+  } else {
+    content.style.display = 'block';
+    toggle.textContent = '–';
+  }
+
+  header.addEventListener('click', () => {
+    section.classList.toggle('collapsed');
+
+    if (section.classList.contains('collapsed')) {
+      content.style.display = 'none';
+      toggle.textContent = '+';
+    } else {
+      content.style.display = 'block';
+      toggle.textContent = '–';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
