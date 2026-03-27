@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="style.css?v=3">
 </head>
 
+<script>
+document.querySelectorAll('.section-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const section = header.parentElement;
+    const content = section.querySelector('.section-content');
+    const toggle = header.querySelector('.toggle');
+
+    section.classList.toggle('collapsed');
+
+    if (section.classList.contains('collapsed')) {
+      content.style.display = 'none';
+      toggle.textContent = '+';
+    } else {
+      content.style.display = 'block';
+      toggle.textContent = '–';
+    }
+  });
+});
+</script>
+  
 <body>
 
 <div class="menu">
