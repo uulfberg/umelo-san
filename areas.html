@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aktiviteter per område</title>
+  <title>Områden</title>
   <link rel="stylesheet" href="style.css?v=4">
   <style>
     .city-group { margin-bottom: 28px; }
@@ -23,30 +23,41 @@
       color: #666;
     }
     .activity-item {
-      display: flex;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 92px 1fr;
       gap: 8px;
-      margin: 8px 0;
+      margin: 10px 0;
+      padding-top: 6px;
     }
     .prio {
-      min-width: 64px;
       font-weight: bold;
-      flex-shrink: 0;
+      font-size: 0.95rem;
+      white-space: nowrap;
     }
-    .item-main { flex: 1; }
     .item-main .name { font-weight: bold; }
     .item-meta {
       color: #666;
       font-size: 0.95rem;
       margin-top: 2px;
     }
+    .item-links {
+      margin-top: 4px;
+    }
     .item-links a {
       margin-right: 10px;
       font-size: 0.95rem;
     }
-    .must .name { font-weight: 700; }
-    .good .name { font-weight: 600; }
-    .bonus .name { color: #444; }
+    .program-prio .prio { color: #8a4b00; }
+    .optional-prio .prio { color: #666; }
+    @media (max-width: 640px) {
+      .activity-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .prio {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -59,151 +70,47 @@
   <a href="hiroshima.html">Hiroshima</a>
   <a href="tokyo_12_14.html">Tokyo (slut)</a>
   <a href="practical.html">Praktiskt</a>
-  <a href="areas.html" class="active">Områden</a>
+  <a href="areas_clean.html" class="active">Områden</a>
 </div>
 
-<h1>Aktiviteter per område</h1>
-<p>Snabböversikt för beslut på plats. Prioritet är en första version baserad på status i underlaget: Booked = 🔥 Must, Planned = ⭐ Bra, Optional/Extra = ○ Bonus.</p>
+<h1>Områden</h1>
+<p>Valbara aktiviteter grupperade per stad och område. Program = högre prio, Optional = lägre prio.</p>
 
 <div class="city-group">
 <h2>Tokyo</h2>
 <div class="area-block">
-<h3>Haneda</h3>
-<p class="area-hint">Airport (Ladda Suica-kort?)</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Arrival airport</div>
-    <div class="item-meta">Transport · 07:15:00 — Dep ARN 10:30 02APR</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Haneda+Airport+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Arrival%20airport%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Airport transfer (bra plats för bagage)</div>
-    <div class="item-meta">Transport · 08:45? — Arr: Hamamatsucho</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Haneda+Airport+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Airport%20transfer%20%28bra%20plats%20f%C3%B6r%20bagage%29%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Transfer to Haneda Airport</div>
-    <div class="item-meta">Transport · 22:00:00 — Från Hamamatsucho</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Haneda+Airport+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Transfer%20to%20Haneda%20Airport%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Arrival Haneda Airport, check-in</div>
-    <div class="item-meta">Logistics · 22:40:00</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Haneda+Airport+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Arrival%20Haneda%20Airport%2C%20check-in%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Departure from Haneda Airport</div>
-    <div class="item-meta">Transport · 00:30:00</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Haneda+Airport+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Departure%20from%20Haneda%20Airport%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Hamamatsucho</h3>
-<p class="area-hint">Byte monorail-&gt;taxi</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Taxi till Tsukiji Outer Market</div>
-    <div class="item-meta">Transport · 09:10? — Taxi (10 min, 1000-1500 yen)</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Tsukiji+Outer+Market+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Taxi%20till%20Tsukiji%20Outer%20Market%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Hamamatsucho / Daimon stroll</div>
-    <div class="item-meta">Sight · FM — Praktiskt område</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hamamatsucho+Station+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hamamatsucho%20/%20Daimon%20stroll%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Check-in Henn na Hotel Tokyo Hamamatsucho</div>
-    <div class="item-meta">Accomodation · 15:00- — Smidigt mot Haneda</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Henn+na+Hotel+Tokyo+Hamamatsucho+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-in%20Henn%20na%20Hotel%20Tokyo%20Hamamatsucho%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Check-out Henn na Hotel Tokyo Hamamatsucho</div>
-    <div class="item-meta">Accomodation · -11:00 — Inkl frukost</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Henn+na+Hotel+Tokyo+Hamamatsucho+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-out%20Henn%20na%20Hotel%20Tokyo%20Hamamatsucho%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Easy morning / flexible planning</div>
-    <div class="item-meta">Logistics · FM — Sista heldagen</div>
-    <div class="item-links"><a href="https://www.google.com/search?q=Easy%20morning%20/%20flexible%20planning%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Luggage pickup at hotel?</div>
-    <div class="item-meta">Transport · 21:30:00</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Henn+na+Hotel+Tokyo+Hamamatsucho+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Luggage%20pickup%20at%20hotel%3F%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Tsukiji</h3>
 <p class="area-hint">kaffehak vid marknaden</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
-    <div class="name">Turret Coffee Tsukiji?</div>
-    <div class="item-meta">Food · 09:30? — Kort stopp</div>
+    <div class="name">Turret Coffee Tsukiji</div>
+    <div class="item-meta">Food — Kort stopp</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Turret+Coffee+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Turret%20Coffee%20Tsukiji%3F%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Sushi breakfast, Tsukiji Outer Market</div>
     <div class="item-meta">Food · FM — Bra första morgon/frukost</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Tsukiji+Outer+Market+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Sushi%20breakfast%2C%20Tsukiji%20Outer%20Market%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Tsukiji Masamoto</div>
     <div class="item-meta">Shop · FM — 150 år gammal</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Tsukiji+Masamoto+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Tsukiji%20Masamoto%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Lämna in bagage på hotellet</div>
-    <div class="item-meta">Transport · FM — Taxi (10-15 min, 1500-2000 yen)</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Tosei+Hotel+Cocone+Asakusa+Kuramae+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=L%C3%A4mna%20in%20bagage%20p%C3%A5%20hotellet%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
 </div>
 <div class="area-block">
 <h3>Asakusa</h3>
 <p class="area-hint">traditionellt tempelområde</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Senso-ji Temple &amp; Nakamise Street</div>
     <div class="item-meta">Sight · FM — Lugnt tidigt</div>
@@ -212,21 +119,10 @@
 </div>
 </div>
 <div class="area-block">
-<h3>Kappabashi?</h3>
-<p class="area-hint">Lunch?</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Lunch?</div>
-    <div class="item-meta">Food · 13:00?</div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Kappabashi</h3>
 <p class="area-hint">köksutrustningsgata</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Kappabashi Street (knivar &amp; plastmat)</div>
     <div class="item-meta">Shop · EM — 1 km från Asakusa</div>
@@ -235,25 +131,13 @@
 </div>
 </div>
 <div class="area-block">
-<h3>Kuramae</h3>
-<p class="area-hint">Boende</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Check-in Tosei Hotel Cocone Asakusa Kuramae</div>
-    <div class="item-meta">Accomodation · 14:00- — Vila efter flyg</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Tosei+Hotel+Cocone+Asakusa+Kuramae+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-in%20Tosei%20Hotel%20Cocone%20Asakusa%20Kuramae%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Ryogoku</h3>
 <p class="area-hint">Sumoområde m restauranger</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Sumo dinner area / Chanko nabe (sumo-måltid)</div>
-    <div class="item-meta">Food · 19:00? — Lugn kväll, nära hotellet</div>
+    <div class="item-meta">Food · KV — Lugn kväll, nära hotellet</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Chanko+nabe+dinner+area+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Sumo%20dinner%20area%20/%20Chanko%20nabe%20%28sumo-m%C3%A5ltid%29%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -261,24 +145,24 @@
 <div class="area-block">
 <h3>Harajuku</h3>
 <p class="area-hint">helgedom i skog</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Meiji Shrine</div>
     <div class="item-meta">Sight · FM — Lugn, tidig start</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Meiji+Shrine+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Meiji%20Shrine%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Takeshita Street</div>
     <div class="item-meta">Sight · FM — Snacks &amp; kitsch</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Takeshita+Street+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Takeshita%20Street%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Harajuku walk</div>
     <div class="item-meta">Sight · EM — Blandning tradition &amp; popkultur</div>
@@ -287,21 +171,10 @@
 </div>
 </div>
 <div class="area-block">
-<h3>Harajuku?</h3>
-<p class="area-hint">Lunch?</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Lunch?</div>
-    <div class="item-meta">Food · 13:00?</div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Omotesando</h3>
 <p class="area-hint">arkitektur &amp; designgata, caféer</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Omotesando boulevard walk</div>
     <div class="item-meta">Sight · EM — Tokyos Champs-Élysées</div>
@@ -312,39 +185,39 @@
 <div class="area-block">
 <h3>Shibuya</h3>
 <p class="area-hint">Fluffy pancakes?</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Fika?</div>
     <div class="item-meta">Food · EM</div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Shibuya Crossing</div>
     <div class="item-meta">Sight · KV — Stämning kväll</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shibuya+Crossing+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Shibuya%20Crossing%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Shibuya Sky</div>
     <div class="item-meta">Sight · 17:40- — Bäst 60–90 min före solnedg. (18.05)</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shibuya+Sky+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Shibuya%20Sky%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Izakaya dinner area (Trånga gränder, lokalt, mysigt)</div>
-    <div class="item-meta">Food · 19:00? — Rest. Kaikaya eller Shirubee?</div>
+    <div class="item-meta">Food · KV — Rest. Kaikaya eller Shirubee?</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shibuya+night+district+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Izakaya%20dinner%20area%20%28Tr%C3%A5nga%20gr%C3%A4nder%2C%20lokalt%2C%20mysigt%29%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Tokyo Skytree observation deck</div>
     <div class="item-meta">Sight · KV — Solnedgång</div>
@@ -355,31 +228,20 @@
 <div class="area-block">
 <h3>Shinjuku?</h3>
 <p class="area-hint">Neon och barer</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Kabuktcho (Red light distr. neonintensivt, kaotiskt)</div>
-    <div class="item-meta">Food · 19:00? — &quot;mörk Blade runner&quot;</div>
+    <div class="item-meta">Food · KV — &quot;mörk Blade runner&quot;</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shinjuku+night+district+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Kabuktcho%20%28Red%20light%20distr.%20neonintensivt%2C%20kaotiskt%29%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Tokyo station</h3>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Shinkansen Tokyo → Odawara</div>
-    <div class="item-meta">Transport · 11:30? — 30 min</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Tokyo+Station+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Shinkansen%20Tokyo%20%E2%86%92%20Odawara%20Tokyo" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
 </div>
 <div class="area-block">
 <h3>Akihabara</h3>
 <p class="area-hint">Geek district</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Arcade + shops</div>
     <div class="item-meta">Activity · Day — Kul/annorlunda</div>
@@ -390,8 +252,8 @@
 <div class="area-block">
 <h3>Bunkyo</h3>
 <p class="area-hint">gratis utsikt</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Bunkyo Civic Center</div>
     <div class="item-meta">Sight · KV — Lugn utsikt</div>
@@ -402,24 +264,24 @@
 <div class="area-block">
 <h3>Ginza</h3>
 <p class="area-hint">cocktailbar</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Bar High Five</div>
     <div class="item-meta">Food · KV — Prisad cocktailbar</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Bar+High+Five+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Bar%20High%20Five%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Eggs &#x27;n Things</div>
     <div class="item-meta">Food · FM — Fluffy pancakes</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Eggs+%27n+Things+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Eggs%20%27n%20Things%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Ginza / central Tokyo option</div>
     <div class="item-meta">Sight · EM — Bra sista stadsdag</div>
@@ -428,10 +290,22 @@
 </div>
 </div>
 <div class="area-block">
+<h3>Hamamatsucho</h3>
+<p class="area-hint">transporthub nära monorail</p>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Hamamatsucho / Daimon stroll</div>
+    <div class="item-meta">Sight · FM — Praktiskt område</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Hamamatsucho+Station+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hamamatsucho%20/%20Daimon%20stroll%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
+<div class="area-block">
 <h3>Nakano</h3>
 <p class="area-hint">retroshopping &amp; lokala restauranger</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Nakano Broadway area (Omoide Yokocho+Golden Gai)</div>
     <div class="item-meta">Sight · KV — Lokalt kvällsområde</div>
@@ -442,24 +316,24 @@
 <div class="area-block">
 <h3>Shinjuku</h3>
 <p class="area-hint">modebutik</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Beams flagship store</div>
     <div class="item-meta">Shop · EM — Japansk design</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Beams+Shinjuku+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Beams%20flagship%20store%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Shinjuku nightlife</div>
     <div class="item-meta">Sight · KV — Största stationen</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shinjuku+night+district+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Shinjuku%20nightlife%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Tokyo Metropolitan Government Building</div>
     <div class="item-meta">Sight · KV — Gratis observatorium</div>
@@ -470,8 +344,8 @@
 <div class="area-block">
 <h3>Ueno</h3>
 <p class="area-hint">park</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Ueno Park walk</div>
     <div class="item-meta">Sight · EM — Lugn promenad</div>
@@ -482,45 +356,23 @@
 <div class="area-block">
 <h3>Yoyogi Park</h3>
 <p class="area-hint">Local vibe</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">People watching</div>
-    <div class="item-meta">Activity · Weekend — Helg = bäst</div>
+    <div class="item-meta">Activity · WE — Helg = bäst</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Yoyogi+Park+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=People%20watching%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Tokyo</h3>
-<p class="area-hint">shinkansen ankomst</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Train Hiroshima → Tokyo, ca 4 tim</div>
-    <div class="item-meta">Transport · EM — Ev via staden Himeji (Shogun-filmen)?</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=White+Heron+Castle+Himeji+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Train%20Hiroshima%20%E2%86%92%20Tokyo%2C%20ca%204%20tim%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Ginza?</h3>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Lunch?</div>
-    <div class="item-meta">Food · 13:00?</div>
   </div>
 </div>
 </div>
 <div class="area-block">
 <h3>Shimbashi</h3>
 <p class="area-hint">stort utbud av izakayas (japanska pubar), barer mm</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Dinner?</div>
-    <div class="item-meta">Food · 19:00? — &quot;salarymen-land&quot; (populärt efter arbetstid)</div>
+    <div class="item-meta">Food · KV — &quot;salarymen-land&quot; (populärt efter arbetstid)</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shimbashi+Tokyo+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Dinner%3F%20Shimbashi%20/%20nearby%20evening%20option%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -529,129 +381,58 @@
 <div class="city-group">
 <h2>Hakone</h2>
 <div class="area-block">
-<h3>Odawara station</h3>
-<p class="area-hint">Köp Hakone Free Pass, 2 dgr!</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Odawara → Hakone-Yumoto Station</div>
-    <div class="item-meta">Transport · 12:30? — 15-30 min tågresa</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Odawara+station+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Odawara%20%E2%86%92%20Hakone-Yumoto%20Station%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Hakone-Yumoto</h3>
 <p class="area-hint">Klassiskt nudelställe, 7 min fr stn</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Lunch (Hatsuhana Soba Honten)</div>
-    <div class="item-meta">Food · 13:30? — sikta på 11:45 eller 13:30 (peak 12-13)</div>
+    <div class="item-meta">Food · FM — sikta på 11:45 eller 13:30 (peak 12-13)</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Hatsuhana+Soba+Honten+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Lunch%20%28Hatsuhana%20Soba%20Honten%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Old Tokaido Road walk (1–1,5h), start nära hotell</div>
-    <div class="item-meta">Sight · 09:30? — “Riktigt Japan”-känsla</div>
+    <div class="item-meta">Sight · FM — “Riktigt Japan”-känsla</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Hakone-Yumoto+Station+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Old%20Tokaido%20Road%20walk%20%281%E2%80%931%2C5h%29%2C%20start%20n%C3%A4ra%20hotell%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Train Hakone-Yumoto → Odawara</div>
-    <div class="item-meta">Transport · 13:00?</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hakone-Yumoto+Station+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Train%20Hakone-Yumoto%20%E2%86%92%20Odawara%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
 </div>
 <div class="area-block">
 <h3>Miyanoshita</h3>
-<p class="area-hint">Boende</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Check-in Yama no Chaya Ryokan (fr 15.00-)</div>
-    <div class="item-meta">Logistics · 14:30? — 15 min prom fr rest.</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Yama+no+Chaya+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-in%20Yama%20no%20Chaya%20Ryokan%20%28fr%2015.00-%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<p class="area-hint">natur nära boendet</p>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Short local walk / explore area</div>
     <div class="item-meta">Sight · EM — Lugn start i naturen</div>
     <div class="item-links"><a href="https://www.google.com/search?q=Short%20local%20walk%20/%20explore%20area%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Private onsen &amp; ryokan dinner (private room)</div>
-    <div class="item-meta">Accomodation · KV — Ev bad på rummet innan</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Yama+no+Chaya+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Private%20onsen%20%26%20ryokan%20dinner%20%28private%20room%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Publik onsen?</div>
     <div class="item-meta">Sight · EM</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Hakone+Yuryo+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Publik%20onsen%3F%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Onsen &amp; ryokan dinner</div>
-    <div class="item-meta">Sight · KV</div>
-    <div class="item-links"><a href="https://www.google.com/search?q=Onsen%20%26%20ryokan%20dinner%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Lugn morgon, ev sista onsen</div>
-    <div class="item-meta">08:30?</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Yama+no+Chaya+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Lugn%20morgon%2C%20ev%20sista%20onsen%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Lunch?</div>
-    <div class="item-meta">Food · 12:00?</div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Gora / Sounzan</h3>
-<p class="area-hint">tåg + kabelbana + ropeway, ca 1 tim</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Tozan Railway + Cable Car to Sounzan (ingår i Pass)</div>
-    <div class="item-meta">Transport · 08:30? — Tidig start för att undvika köer</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hakone+Tozan+Railway+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Tozan%20Railway%20%2B%20Cable%20Car%20to%20Sounzan%20%28ing%C3%A5r%20i%20Pass%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
 </div>
 <div class="area-block">
 <h3>Owakudani</h3>
 <p class="area-hint">vulkanlandskap</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Hakone Ropeway &amp; volcanic valley (ingår i Pass)</div>
-    <div class="item-meta">Sight · 09:30:00 — Svarta ägg + ev Fuji</div>
+    <div class="item-meta">Sight · FM — Svarta ägg + ev Fuji</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Owakudani+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hakone%20Ropeway%20%26%20volcanic%20valley%20%28ing%C3%A5r%20i%20Pass%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Hiking around Owakudani (1–1.5h)</div>
     <div class="item-meta">Sight · FM — Vandring i området</div>
@@ -662,8 +443,8 @@
 <div class="area-block">
 <h3>Gora</h3>
 <p class="area-hint">bergsmuseum</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Hakone Open-Air Museum</div>
     <div class="item-meta">Sight · EM — Alternativ om dåligt väder dag 2</div>
@@ -674,8 +455,8 @@
 <div class="area-block">
 <h3>Yumoto</h3>
 <p class="area-hint">onsenbad</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Hakone Yuryo onsen, 9 min fr hotell</div>
     <div class="item-meta">Sight · EM — Om ni vill bada utanför ryokan</div>
@@ -685,127 +466,28 @@
 </div>
 </div>
 <div class="city-group">
-<h2>Kyoto / Osaka</h2>
-<div class="area-block">
-<h3>Odawara station</h3>
-<p class="area-hint">Shinkansen</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Odawara → Kyoto</div>
-    <div class="item-meta">Transport · EM</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Odawara+station+Hakone+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Odawara%20%E2%86%92%20Kyoto%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Kyoto Station</h3>
-<p class="area-hint">huvudstation / ankomstpunkt</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Arrival Kyoto Station</div>
-    <div class="item-meta">Transport · 18:00? — Från Hakone m Jinkansen</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Kyoto+Station+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Arrival%20Kyoto%20Station%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Departure Kyoto Station</div>
-    <div class="item-meta">Transport · EM — Jinkansen till Hiroshima, ca 1,5 tim</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Kyoto+Station+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Departure%20Kyoto%20Station%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Rent bicycles and explore Kyoto</div>
-    <div class="item-meta">Activity · EM — Smågator, hantverk, mat</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Cycle+Kyoto+small+streets+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Rent%20bicycles%20and%20explore%20Kyoto%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Higashiyama</h3>
-<p class="area-hint">Boende</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Check-in Kyoto apartment</div>
-    <div class="item-meta">Accomodation · EM — Ebisucho Kitagumi</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Kyoto+apartment+Higashiyama+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-in%20Kyoto%20apartment%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Kiyomizu-dera</div>
-    <div class="item-meta">Sight · FM — Morgon bäst före stora grupper</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Kiyomizu-dera+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Kiyomizu-dera%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Ninenzaka &amp; Sannenzaka walk</div>
-    <div class="item-meta">Sight · EM — Morgon/eftermiddag</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Ninenzaka+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Ninenzaka%20%26%20Sannenzaka%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Yasaka Shrine</div>
-    <div class="item-meta">Sight · KV — Fin kvällsplats</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Yasaka+Shrine+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Yasaka%20Shrine%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Sanjusangendo Temple</div>
-    <div class="item-meta">Sight · EM — Unik upplevelse</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Sanjusangendo+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Sanjusangendo%20Temple%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Higashiyama → Ninenzaka → Sannenzaka walk</div>
-    <div class="item-meta">Sight · FM — Mycket stark morgonrutt</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Ninenzaka+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Higashiyama%20%E2%86%92%20Ninenzaka%20%E2%86%92%20Sannenzaka%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
+<h2>Kyoto</h2>
 <div class="area-block">
 <h3>Gion</h3>
 <p class="area-hint">historiskt kvällsområde</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Dinner?</div>
-    <div class="item-meta">Food · 20:00?</div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Light evening walk in Gion</div>
     <div class="item-meta">Sight · KV — Mjuk start efter resa</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Gion+district+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Light%20evening%20walk%20in%20Gion%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Gion walk</div>
     <div class="item-meta">Sight · EM — Klassisk Kyoto-känsla</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Gion+district+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Gion%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">ITOH Dining by Nobu Kyoto</div>
     <div class="item-meta">Food · KV</div>
@@ -816,8 +498,8 @@
 <div class="area-block">
 <h3>Fushimi Inari</h3>
 <p class="area-hint">heligt berg med röda torii-portar</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Fushimi Inari Taisha hike</div>
     <div class="item-meta">Sight · FM — Start 07–08</div>
@@ -828,8 +510,8 @@
 <div class="area-block">
 <h3>Yasaka</h3>
 <p class="area-hint">helgedom och kvällsliv</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Yasaka Shrine + evening walk</div>
     <div class="item-meta">Sight · KV — Fint efter mörker</div>
@@ -840,11 +522,11 @@
 <div class="area-block">
 <h3>Pontocho</h3>
 <p class="area-hint">smalt restaurangstråk vid floden</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Pontocho dinner alley (+promenad)</div>
-    <div class="item-meta">Food · 19:00? — Stämningsfull kväll</div>
+    <div class="item-meta">Food · KV — Stämningsfull kväll</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Pontocho+Alley+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Pontocho%20dinner%20alley%20%28%2Bpromenad%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -852,24 +534,24 @@
 <div class="area-block">
 <h3>Arashiyama</h3>
 <p class="area-hint">bambuskog, tempel och flodlandskap</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Arashiyama Bamboo Grove</div>
     <div class="item-meta">Sight · FM — Gå tidigt</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Arashiyama+Bamboo+Grove+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Arashiyama%20Bamboo%20Grove%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Tenryu-ji Temple Garden</div>
     <div class="item-meta">Sight · FM — Kombineras med bambuskogen</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Tenryu-ji+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Tenryu-ji%20Temple%20Garden%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Togetsukyo Bridge area walk</div>
     <div class="item-meta">Sight · EM — Fortsätt mot floden</div>
@@ -880,8 +562,8 @@
 <div class="area-block">
 <h3>Uji</h3>
 <p class="area-hint">te- och matchakultur</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Uji excursion / tea focus</div>
     <div class="item-meta">Sight · EM — Kan kombineras med teceremoni</div>
@@ -892,16 +574,16 @@
 <div class="area-block">
 <h3>Downtown</h3>
 <p class="area-hint">matmarknad i centrum</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Dinner (Nishiki Market / central Kyoto food walk)</div>
-    <div class="item-meta">Food · 19:00? — Bäst utanför lunchpeak</div>
+    <div class="item-meta">Food · KV — Bäst utanför lunchpeak</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Nishiki+Market+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Dinner%20%28Nishiki%20Market%20/%20central%20Kyoto%20food%20walk%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Aritsugu knife shop</div>
     <div class="item-meta">Shop · EM — Ligger i Nishiki Market</div>
@@ -910,81 +592,54 @@
 </div>
 </div>
 <div class="area-block">
-<h3>Kyoto station</h3>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<h3>Higashiyama</h3>
+<p class="area-hint">trätempel på sluttning</p>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
-    <div class="name">Pendeltåg till Osaka</div>
-    <div class="item-meta">Transport · EM — Ta pendeltåg, inte Shinkansen</div>
-    <div class="item-links"><a href="https://maps.app.goo.gl/tFpoAvC2N4Z96h7B8" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Pendelt%C3%A5g%20till%20Osaka%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+    <div class="name">Kiyomizu-dera</div>
+    <div class="item-meta">Sight · FM — Morgon bäst före stora grupper</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Kiyomizu-dera+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Kiyomizu-dera%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-</div>
-<div class="area-block">
-<h3>Namba</h3>
-<p class="area-hint">bästa fotoplatsen</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
-    <div class="name">Ebisu Bridge (16.00-&gt;)</div>
-    <div class="item-meta">Sight · 16:00- · Osaka</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Ebisu+Bridge+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Ebisu%20Bridge%20%2816.00-%3E%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+    <div class="name">Ninenzaka &amp; Sannenzaka walk</div>
+    <div class="item-meta">Sight · EM — Morgon/eftermiddag</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Ninenzaka+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Ninenzaka%20%26%20Sannenzaka%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
-    <div class="name">Dotonbori canal walk</div>
-    <div class="item-meta">Sight · KV · Osaka — Klassisk kväll</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Dotonbori+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Dotonbori%20canal%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+    <div class="name">Yasaka Shrine</div>
+    <div class="item-meta">Sight · KV — Fin kvällsplats</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Yasaka+Shrine+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Yasaka%20Shrine%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
-    <div class="name">Bar Shinka</div>
-    <div class="item-meta">Food · KV · Osaka — Vuxenalternativ</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Bar+Shinka+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Bar%20Shinka%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+    <div class="name">Sanjusangendo Temple</div>
+    <div class="item-meta">Sight · EM — Unik upplevelse</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Sanjusangendo+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Sanjusangendo%20Temple%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-</div>
-<div class="area-block">
-<h3>Dotonbori</h3>
-<p class="area-hint">neon, streetfood och kvällspuls</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
-    <div class="name">Osaka evening trip</div>
-    <div class="item-meta">Sight · 19:00? · Osaka</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Dotonbori+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Osaka%20evening%20trip%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Kyoto</h3>
-<p class="area-hint">fri tid i Kyoto</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Free time / flexible options</div>
-    <div class="item-meta">Logistics · FM — Öppet upplägg</div>
-    <div class="item-links"><a href="https://www.google.com/search?q=Free%20time%20/%20flexible%20options%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">THE CEREMONY – Tea Experience Kyoto</div>
-    <div class="item-meta">Sight · EM — Bokas i förväg</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=THE+CEREMONY+%E2%80%93+Tea+Experience+Kyoto+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=THE%20CEREMONY%20%E2%80%93%20Tea%20Experience%20Kyoto%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+    <div class="name">Higashiyama → Ninenzaka → Sannenzaka walk</div>
+    <div class="item-meta">Sight · FM — Mycket stark morgonrutt</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Ninenzaka+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Higashiyama%20%E2%86%92%20Ninenzaka%20%E2%86%92%20Sannenzaka%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
 </div>
 <div class="area-block">
 <h3>Himeji</h3>
 <p class="area-hint">stopover på väg från Kyoto</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Himeji Castle stop (Shogun movie)</div>
     <div class="item-meta">Sight · EM — 2–3 h stopp</div>
@@ -995,8 +650,8 @@
 <div class="area-block">
 <h3>Kawaramachi</h3>
 <p class="area-hint">food hall i varuhus</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Takashimaya depachika</div>
     <div class="item-meta">Food · EM — Bra omväxling</div>
@@ -1007,8 +662,8 @@
 <div class="area-block">
 <h3>Kinkaku-ji</h3>
 <p class="area-hint">gyllene paviljongen</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Kinkaku-ji</div>
     <div class="item-meta">Sight · EM — Viktigt världsarv</div>
@@ -1017,10 +672,34 @@
 </div>
 </div>
 <div class="area-block">
+<h3>Kyoto</h3>
+<p class="area-hint">traditionell teceremoni</p>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">THE CEREMONY – Tea Experience Kyoto</div>
+    <div class="item-meta">Sight · EM — Bokas i förväg</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=THE+CEREMONY+%E2%80%93+Tea+Experience+Kyoto+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=THE%20CEREMONY%20%E2%80%93%20Tea%20Experience%20Kyoto%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
+<div class="area-block">
+<h3>Kyoto Station</h3>
+<p class="area-hint">cykelvänlig rutnätsstad</p>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Rent bicycles and explore Kyoto</div>
+    <div class="item-meta">Activity · EM — Smågator, hantverk, mat</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Cycle+Kyoto+small+streets+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Rent%20bicycles%20and%20explore%20Kyoto%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
+<div class="area-block">
 <h3>Maruyama Park</h3>
 <p class="area-hint">park vid Yasaka Shrine</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Maruyama Park</div>
     <div class="item-meta">Sight · KV — Bra kvällspromenad</div>
@@ -1031,8 +710,8 @@
 <div class="area-block">
 <h3>Nijo</h3>
 <p class="area-hint">shogunens residens</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Nijo Castle</div>
     <div class="item-meta">Sight · EM — Historiskt viktigt</div>
@@ -1043,8 +722,8 @@
 <div class="area-block">
 <h3>Shirakawa</h3>
 <p class="area-hint">kanalstråk i Gion</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Shirakawa canal walk</div>
     <div class="item-meta">Sight · KV — Mycket stämningsfullt</div>
@@ -1052,14 +731,65 @@
   </div>
 </div>
 </div>
+</div>
+<div class="city-group">
+<h2>Osaka</h2>
+<div class="area-block">
+<h3>Namba</h3>
+<p class="area-hint">bästa fotoplatsen</p>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
+  <div class="item-main">
+    <div class="name">Ebisu Bridge (16.00-&gt;)</div>
+    <div class="item-meta">Sight · EM</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Ebisu+Bridge+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Ebisu%20Bridge%20%2816.00-%3E%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Dotonbori canal walk</div>
+    <div class="item-meta">Sight · KV — Klassisk kväll</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Dotonbori+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Dotonbori%20canal%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Ebisu Bridge (16.00-&gt;)</div>
+    <div class="item-meta">Sight · KV — Ikonisk utsikt</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Ebisu+Bridge+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Ebisu%20Bridge%20%2816.00-%3E%29%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Bar Shinka</div>
+    <div class="item-meta">Food · KV — Vuxenalternativ</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Bar+Shinka+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Bar%20Shinka%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
+<div class="area-block">
+<h3>Dotonbori</h3>
+<p class="area-hint">neon, streetfood och kvällspuls</p>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
+  <div class="item-main">
+    <div class="name">Osaka evening trip</div>
+    <div class="item-meta">Sight · KV</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Dotonbori+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Osaka%20evening%20trip%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
 <div class="area-block">
 <h3>Amerikamura</h3>
 <p class="area-hint">ungdomlig stadsdel</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Amerikamura walk</div>
-    <div class="item-meta">Sight · KV · Osaka — Mer alternativ vibe</div>
+    <div class="item-meta">Sight · KV — Mer alternativ vibe</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Amerikamura+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Amerikamura%20walk%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -1067,11 +797,11 @@
 <div class="area-block">
 <h3>Kuromon</h3>
 <p class="area-hint">marknad med snacks</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Kuromon Market</div>
-    <div class="item-meta">Food · EM · Osaka — Bra om man åker tidigt</div>
+    <div class="item-meta">Food · EM — Bra om man åker tidigt</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Kuromon+Ichiba+Market+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Kuromon%20Market%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -1079,11 +809,11 @@
 <div class="area-block">
 <h3>Nakazakicho</h3>
 <p class="area-hint">lugnare kvarter med caféer</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Nakazakicho stroll</div>
-    <div class="item-meta">Sight · EM · Osaka — Kontrast till Dotonbori</div>
+    <div class="item-meta">Sight · EM — Kontrast till Dotonbori</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Nakazakicho+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Nakazakicho%20stroll%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -1091,11 +821,11 @@
 <div class="area-block">
 <h3>Nipponbashi</h3>
 <p class="area-hint">anime/teknik-område</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Den Den Town</div>
-    <div class="item-meta">Sight · KV · Osaka — Om gruppen vill ha mer popkultur</div>
+    <div class="item-meta">Sight · KV — Om gruppen vill ha mer popkultur</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Den+Den+Town+Kyoto+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Den%20Den%20Town%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -1103,11 +833,11 @@
 <div class="area-block">
 <h3>Umeda</h3>
 <p class="area-hint">utsiktsbyggnad</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Umeda Sky Building</div>
-    <div class="item-meta">Sight · KV · Osaka — Alternativ kväll</div>
+    <div class="item-meta">Sight · KV — Alternativ kväll</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Umeda+Sky+Building+Osaka+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Umeda%20Sky%20Building%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
@@ -1116,82 +846,34 @@
 <div class="city-group">
 <h2>Hiroshima</h2>
 <div class="area-block">
-<h3>Hiroshima Station</h3>
-<p class="area-hint">shinkansen ankomst</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Train Kyoto → Hiroshima</div>
-    <div class="item-meta">Transport · EM — Ev via Himeji?</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hiroshima+Station+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Train%20Kyoto%20%E2%86%92%20Hiroshima%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Train Hiroshima → Tokyo</div>
-    <div class="item-meta">Transport · EM — Ev via Himeji</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hiroshima+Station+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Train%20Hiroshima%20%E2%86%92%20Tokyo%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Central</h3>
-<p class="area-hint">Boende</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Check-in Capsule Hotel Cube Hiroshima</div>
-    <div class="item-meta">Accomodation · 15:00- — Kort stopp</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Capsule+Hotel+Cube+Hiroshima+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Check-in%20Capsule%20Hotel%20Cube%20Hiroshima%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Hiroshima Castle</div>
-    <div class="item-meta">Sight · EM — Backup</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Hiroshima+Castle+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hiroshima%20Castle%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
-  <div class="item-main">
-    <div class="name">Oysters &amp; sake tasting</div>
-    <div class="item-meta">Food · KV — Lokalt tema</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Oyster+food+stalls+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Oysters%20%26%20sake%20tasting%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
 <h3>Peace Park</h3>
 <p class="area-hint">minnespark och monument</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Peace Memorial Park</div>
     <div class="item-meta">Sight · EM — Börja här</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Peace+Memorial+Park+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Peace%20Memorial%20Park%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Atomic Bomb Dome</div>
     <div class="item-meta">Sight · EM — Ligger i samma område</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Atomic+Bomb+Dome+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Atomic%20Bomb%20Dome%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Peace Memorial Museum</div>
     <div class="item-meta">Sight · EM — Börja gärna med filmen</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Peace+Memorial+Museum+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Peace%20Memorial%20Museum%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Volunteer guide from Aioi Bridge</div>
     <div class="item-meta">Sight · EM — 1–2 h, kontant tackbidrag</div>
@@ -1202,64 +884,52 @@
 <div class="area-block">
 <h3>Hatchobori</h3>
 <p class="area-hint">okonomiyaki-byggnad</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Okonomimura dinner</div>
-    <div class="item-meta">Food · 19:00? — Hiroshima-style okonomiyaki</div>
+    <div class="item-meta">Food · KV — Hiroshima-style okonomiyaki</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Okonomimura+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Okonomimura%20dinner%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-<div class="area-block">
-<h3>Miyajimaguchi</h3>
-<p class="area-hint">tåg + färja till ön</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
-  <div class="item-main">
-    <div class="name">Travel Hiroshima → Miyajima</div>
-    <div class="item-meta">Transport · 08:00? — Tidig start</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Miyajimaguchi+Station+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Travel%20Hiroshima%20%E2%86%92%20Miyajima%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
 </div>
 <div class="area-block">
 <h3>Miyajima</h3>
 <p class="area-hint">ikonisk torii-port och helgedom</p>
-<div class="activity-item good">
-  <div class="prio">⭐ Bra</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Itsukushima Shrine &amp; torii gate</div>
     <div class="item-meta">Sight · FM — Kolla tidvatten</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Itsukushima+Shrine+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Itsukushima%20Shrine%20%26%20torii%20gate%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Mount Misen viewpoint</div>
     <div class="item-meta">Sight · EM — Ropeway om vädret är klart</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Mount+Misen+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Mount%20Misen%20viewpoint%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item program-prio">
+  <div class="prio">🔥 Program</div>
   <div class="item-main">
     <div class="name">Miyajima free time</div>
     <div class="item-meta">Sight · EM — 3–4 h på plats</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Miyajima+deer+area+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Miyajima%20free%20time%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Hillside walks away from main shrine</div>
     <div class="item-meta">Sight · EM — Bra om tid/ork finns</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Daisho-in+Temple+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hillside%20walks%20away%20from%20main%20shrine%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
   </div>
 </div>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Stroll, deer &amp; momiji snacks</div>
     <div class="item-meta">Sight · EM — Ingår naturligt</div>
@@ -1268,10 +938,30 @@
 </div>
 </div>
 <div class="area-block">
+<h3>Central</h3>
+<p class="area-hint">slott i staden</p>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Hiroshima Castle</div>
+    <div class="item-meta">Sight · EM — Backup</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Hiroshima+Castle+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Hiroshima%20Castle%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
+  <div class="item-main">
+    <div class="name">Oysters &amp; sake tasting</div>
+    <div class="item-meta">Food · KV — Lokalt tema</div>
+    <div class="item-links"><a href="https://maps.google.com/?q=Oyster+food+stalls+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Oysters%20%26%20sake%20tasting%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
+  </div>
+</div>
+</div>
+<div class="area-block">
 <h3>Fukuyama</h3>
 <p class="area-hint">zen-tempel och trädgård</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Shinshoji Zen and Garden Museum</div>
     <div class="item-meta">Sight · EM — Kräver mer transport</div>
@@ -1282,8 +972,8 @@
 <div class="area-block">
 <h3>Himeji</h3>
 <p class="area-hint">stopover på väg från Kyoto</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Himeji Castle stop (Shogun movie)</div>
     <div class="item-meta">Sight · EM — 2–3 h stopp</div>
@@ -1294,27 +984,12 @@
 <div class="area-block">
 <h3>Shukkeien</h3>
 <p class="area-hint">historisk japansk trädgård</p>
-<div class="activity-item bonus">
-  <div class="prio">○ Bonus</div>
+<div class="activity-item optional-prio">
+  <div class="prio">○ Optional</div>
   <div class="item-main">
     <div class="name">Shukkeien Garden</div>
     <div class="item-meta">Sight · EM — Lugn kontrast</div>
     <div class="item-links"><a href="https://maps.google.com/?q=Shukkeien+Garden+Hiroshima+Japan" target="_blank" rel="noopener noreferrer">📍 Karta</a> <a href="https://www.google.com/search?q=Shukkeien%20Garden%20nan" target="_blank" rel="noopener noreferrer">ℹ️ Info</a></div>
-  </div>
-</div>
-</div>
-</div>
-<div class="city-group">
-<h2>Stockholm</h2>
-<div class="area-block">
-<h3>Arlanda</h3>
-<p class="area-hint">Flygplats</p>
-<div class="activity-item must">
-  <div class="prio">🔥 Must</div>
-  <div class="item-main">
-    <div class="name">Arrival to Arlanda Airport</div>
-    <div class="item-meta">Transport · 07:35:00</div>
-    <div class="item-links"><a href="https://maps.google.com/?q=Arlanda+Airport+Stockhom+Sweden" target="_blank" rel="noopener noreferrer">📍 Karta</a></div>
   </div>
 </div>
 </div>
