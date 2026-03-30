@@ -989,6 +989,32 @@ prioFilter.addEventListener('change', () => {
   });
 });
 </script>
+<script>
+const heartButtons = document.querySelectorAll('.heart-btn');
 
+heartButtons.forEach((btn, index) => {
+  const item = btn.closest('.activity-item');
+  const name = item.querySelector('.name')?.textContent?.trim() || `item-${index}`;
+  const storageKey = `favorite-${name}`;
+
+  const saved = localStorage.getItem(storageKey);
+  if (saved === 'true') {
+    btn.textContent = '❤️';
+    btn.classList.add('active');
+  }
+
+  btn.addEventListener('click', () => {
+    const isActive = btn.classList.toggle('active');
+
+    if (isActive) {
+      btn.textContent = '❤️';
+      localStorage.setItem(storageKey, 'true');
+    } else {
+      btn.textContent = '🤍';
+      localStorage.setItem(storageKey, 'false');
+    }
+  });
+});
+</script>
 </body>
 </html>
