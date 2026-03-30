@@ -993,7 +993,10 @@ prioFilter.addEventListener('change', () => {
 });
 </script>
 <script>
+<script>
 const heartButtons = document.querySelectorAll('.heart-btn');
+const prioFilter = document.getElementById('prioFilter');
+const favFilter = document.getElementById('favFilter');
 
 heartButtons.forEach((btn, index) => {
   const item = btn.closest('.activity-item');
@@ -1004,6 +1007,10 @@ heartButtons.forEach((btn, index) => {
   if (saved === 'true') {
     btn.textContent = '❤️';
     btn.classList.add('active');
+    item.dataset.favorite = 'true';
+  } else {
+    btn.textContent = '🤍';
+    item.dataset.favorite = 'false';
   }
 
   btn.addEventListener('click', () => {
@@ -1012,12 +1019,38 @@ heartButtons.forEach((btn, index) => {
     if (isActive) {
       btn.textContent = '❤️';
       localStorage.setItem(storageKey, 'true');
+      item.dataset.favorite = 'true';
     } else {
       btn.textContent = '🤍';
       localStorage.setItem(storageKey, 'false');
+      item.dataset.favorite = 'false';
     }
+
+    applyFilters();
   });
 });
+
+function applyFilters() {
+  const prioValue = prioFilter ? prioFilter.value : 'all';
+  const favValue = favFilter ? favFilter.value : 'all';
+
+  document.querySelectorAll('.activity-item').forEach(item => {
+    const prioMatch = prioValue === 'all' || item.dataset.prio === prioValue;
+    const favMatch = favValue === 'all' || item.dataset.favorite === 'true';
+
+    item.style.display = (prioMatch && favMatch) ? '' : 'none';
+  });
+}
+
+if (prioFilter) {
+  prioFilter.addEventListener('change', applyFilters);
+}
+
+if (favFilter) {
+  favFilter.addEventListener('change', applyFilters);
+}
+
+applyFilters();
 </script>
 </body>
 </html>
