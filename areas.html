@@ -987,20 +987,6 @@
 </div>
 
 <script>
-const prioFilter = document.getElementById('prioFilter');
-prioFilter.addEventListener('change', () => {
-  const val = prioFilter.value;
-  document.querySelectorAll('.activity-item').forEach(item => {
-    if (val === 'all' || item.dataset.prio === val) {
-      item.style.display = '';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-});
-</script>
-  
-<script>
 const heartButtons = document.querySelectorAll('.heart-btn');
 const prioFilter = document.getElementById('prioFilter');
 const favFilter = document.getElementById('favFilter');
