@@ -23,11 +23,14 @@
 
 <h2>Program</h2>
 
-<div class="day">
-  <h3>7 april</h3>
-  <div class="activity status-planned">
-  <div class="time">EM</div>
-  <div class="content">
+<div class="day collapsed">
+  <div class="day-header">
+    <h3>7 april</h3>
+    <span class="day-toggle">+</span>
+  </div>
+
+  <div class="day-content">
+    
     <h4>Odawara → Kyoto</h4>
     <p class="area">Område: Odawara station</p>
     <p class="hint">Shinkansen</p>
@@ -729,5 +732,34 @@
   </div>
 </div>
 
+<script>
+document.querySelectorAll('.day').forEach(day => {
+  const header = day.querySelector('.day-header');
+  const content = day.querySelector('.day-content');
+  const toggle = day.querySelector('.day-toggle');
+
+  if (!header || !content || !toggle) return;
+
+  if (day.classList.contains('collapsed')) {
+    content.style.display = 'none';
+    toggle.textContent = '+';
+  } else {
+    content.style.display = 'block';
+    toggle.textContent = '–';
+  }
+
+  header.addEventListener('click', () => {
+    day.classList.toggle('collapsed');
+
+    if (day.classList.contains('collapsed')) {
+      content.style.display = 'none';
+      toggle.textContent = '+';
+    } else {
+      content.style.display = 'block';
+      toggle.textContent = '–';
+    }
+  });
+});
+</script>
 </body>
 </html>
