@@ -326,5 +326,34 @@
   </div>
 </div>
 
+<script>
+document.querySelectorAll('.day').forEach(day => {
+  const header = day.querySelector('.day-header');
+  const content = day.querySelector('.day-content');
+  const toggle = day.querySelector('.day-toggle');
+
+  if (!header || !content || !toggle) return;
+
+  if (day.classList.contains('collapsed')) {
+    content.style.display = 'none';
+    toggle.textContent = '+';
+  } else {
+    content.style.display = 'block';
+    toggle.textContent = '–';
+  }
+
+  header.addEventListener('click', () => {
+    day.classList.toggle('collapsed');
+
+    if (day.classList.contains('collapsed')) {
+      content.style.display = 'none';
+      toggle.textContent = '+';
+    } else {
+      content.style.display = 'block';
+      toggle.textContent = '–';
+    }
+  });
+});
+</script>
 </body>
 </html>
