@@ -320,3 +320,30 @@ nav,
 .destination-note ul {
   margin: 0;
 }
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.day-header h3 {
+  margin: 0;
+}
+
+.day-toggle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #666;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.day-content {
+  margin-top: 10px;
+}
+
+.day.collapsed .day-content {
+  display: none;
+}
