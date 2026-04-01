@@ -303,3 +303,20 @@ nav,
 .heart-btn.active {
   transform: scale(1.05);
 }
+
+.destination-note {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.destination-note p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.destination-note ul {
+  margin: 0;
+}
